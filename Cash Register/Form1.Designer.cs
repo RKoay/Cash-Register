@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDisplay));
             this.displayO = new System.Windows.Forms.Label();
             this.displayTh = new System.Windows.Forms.Label();
             this.displayT = new System.Windows.Forms.Label();
@@ -50,12 +51,14 @@
             this.blankDisplayT = new System.Windows.Forms.Label();
             this.blankDisplayTh = new System.Windows.Forms.Label();
             this.blankDisplayF = new System.Windows.Forms.Label();
+            this.textboxSix = new System.Windows.Forms.MaskedTextBox();
+            this.displayNine = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // displayO
             // 
             this.displayO.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayO.Location = new System.Drawing.Point(30, 30);
+            this.displayO.Location = new System.Drawing.Point(30, 82);
             this.displayO.Name = "displayO";
             this.displayO.Size = new System.Drawing.Size(170, 23);
             this.displayO.TabIndex = 0;
@@ -64,7 +67,7 @@
             // displayTh
             // 
             this.displayTh.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayTh.Location = new System.Drawing.Point(30, 106);
+            this.displayTh.Location = new System.Drawing.Point(30, 158);
             this.displayTh.Name = "displayTh";
             this.displayTh.Size = new System.Drawing.Size(170, 23);
             this.displayTh.TabIndex = 1;
@@ -73,7 +76,7 @@
             // displayT
             // 
             this.displayT.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayT.Location = new System.Drawing.Point(30, 65);
+            this.displayT.Location = new System.Drawing.Point(30, 125);
             this.displayT.Name = "displayT";
             this.displayT.Size = new System.Drawing.Size(170, 23);
             this.displayT.TabIndex = 2;
@@ -82,7 +85,7 @@
             // textboxO
             // 
             this.textboxO.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxO.Location = new System.Drawing.Point(229, 27);
+            this.textboxO.Location = new System.Drawing.Point(229, 70);
             this.textboxO.Name = "textboxO";
             this.textboxO.Size = new System.Drawing.Size(69, 35);
             this.textboxO.TabIndex = 3;
@@ -90,7 +93,7 @@
             // textboxTh
             // 
             this.textboxTh.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxTh.Location = new System.Drawing.Point(229, 103);
+            this.textboxTh.Location = new System.Drawing.Point(229, 155);
             this.textboxTh.Name = "textboxTh";
             this.textboxTh.Size = new System.Drawing.Size(69, 35);
             this.textboxTh.TabIndex = 4;
@@ -98,7 +101,7 @@
             // textboxT
             // 
             this.textboxT.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxT.Location = new System.Drawing.Point(229, 65);
+            this.textboxT.Location = new System.Drawing.Point(229, 113);
             this.textboxT.Name = "textboxT";
             this.textboxT.Size = new System.Drawing.Size(69, 35);
             this.textboxT.TabIndex = 5;
@@ -107,7 +110,7 @@
             // 
             this.clickO.BackColor = System.Drawing.Color.MistyRose;
             this.clickO.Font = new System.Drawing.Font("Tekton Pro Ext", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickO.Location = new System.Drawing.Point(57, 156);
+            this.clickO.Location = new System.Drawing.Point(57, 199);
             this.clickO.Name = "clickO";
             this.clickO.Size = new System.Drawing.Size(223, 46);
             this.clickO.TabIndex = 6;
@@ -118,7 +121,7 @@
             // displayF
             // 
             this.displayF.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayF.Location = new System.Drawing.Point(30, 220);
+            this.displayF.Location = new System.Drawing.Point(30, 260);
             this.displayF.Name = "displayF";
             this.displayF.Size = new System.Drawing.Size(170, 23);
             this.displayF.TabIndex = 7;
@@ -127,7 +130,7 @@
             // displayFi
             // 
             this.displayFi.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayFi.Location = new System.Drawing.Point(30, 260);
+            this.displayFi.Location = new System.Drawing.Point(30, 297);
             this.displayFi.Name = "displayFi";
             this.displayFi.Size = new System.Drawing.Size(170, 23);
             this.displayFi.TabIndex = 8;
@@ -136,7 +139,7 @@
             // displayS
             // 
             this.displayS.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayS.Location = new System.Drawing.Point(30, 301);
+            this.displayS.Location = new System.Drawing.Point(30, 320);
             this.displayS.Name = "displayS";
             this.displayS.Size = new System.Drawing.Size(170, 23);
             this.displayS.TabIndex = 9;
@@ -146,7 +149,7 @@
             // 
             this.decorationO.BackColor = System.Drawing.Color.Black;
             this.decorationO.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.decorationO.Location = new System.Drawing.Point(-5, 327);
+            this.decorationO.Location = new System.Drawing.Point(-5, 346);
             this.decorationO.Name = "decorationO";
             this.decorationO.Size = new System.Drawing.Size(310, 23);
             this.decorationO.TabIndex = 13;
@@ -154,7 +157,7 @@
             // displaySe
             // 
             this.displaySe.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displaySe.Location = new System.Drawing.Point(30, 365);
+            this.displaySe.Location = new System.Drawing.Point(30, 384);
             this.displaySe.Name = "displaySe";
             this.displaySe.Size = new System.Drawing.Size(170, 23);
             this.displaySe.TabIndex = 14;
@@ -163,7 +166,7 @@
             // displayE
             // 
             this.displayE.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayE.Location = new System.Drawing.Point(30, 457);
+            this.displayE.Location = new System.Drawing.Point(30, 482);
             this.displayE.Name = "displayE";
             this.displayE.Size = new System.Drawing.Size(170, 23);
             this.displayE.TabIndex = 15;
@@ -172,7 +175,7 @@
             // textboxSe
             // 
             this.textboxSe.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxSe.Location = new System.Drawing.Point(229, 353);
+            this.textboxSe.Location = new System.Drawing.Point(229, 372);
             this.textboxSe.Name = "textboxSe";
             this.textboxSe.Size = new System.Drawing.Size(69, 35);
             this.textboxSe.TabIndex = 16;
@@ -190,7 +193,7 @@
             // 
             this.clickT.BackColor = System.Drawing.Color.MistyRose;
             this.clickT.Font = new System.Drawing.Font("Tekton Pro Ext", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickT.Location = new System.Drawing.Point(57, 391);
+            this.clickT.Location = new System.Drawing.Point(57, 420);
             this.clickT.Name = "clickT";
             this.clickT.Size = new System.Drawing.Size(223, 46);
             this.clickT.TabIndex = 19;
@@ -202,7 +205,7 @@
             // 
             this.clickTh.BackColor = System.Drawing.Color.MistyRose;
             this.clickTh.Font = new System.Drawing.Font("Tekton Pro Ext", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickTh.Location = new System.Drawing.Point(57, 499);
+            this.clickTh.Location = new System.Drawing.Point(57, 517);
             this.clickTh.Name = "clickTh";
             this.clickTh.Size = new System.Drawing.Size(223, 46);
             this.clickTh.TabIndex = 20;
@@ -219,12 +222,13 @@
             this.clickF.TabIndex = 22;
             this.clickF.Text = "New Order";
             this.clickF.UseVisualStyleBackColor = true;
+            this.clickF.Click += new System.EventHandler(this.clickF_Click);
             // 
             // blankDisplayO
             // 
             this.blankDisplayO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.blankDisplayO.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blankDisplayO.Location = new System.Drawing.Point(141, 220);
+            this.blankDisplayO.Location = new System.Drawing.Point(143, 264);
             this.blankDisplayO.Name = "blankDisplayO";
             this.blankDisplayO.Size = new System.Drawing.Size(157, 19);
             this.blankDisplayO.TabIndex = 23;
@@ -234,7 +238,7 @@
             // 
             this.blankDisplayT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.blankDisplayT.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blankDisplayT.Location = new System.Drawing.Point(143, 260);
+            this.blankDisplayT.Location = new System.Drawing.Point(143, 297);
             this.blankDisplayT.Name = "blankDisplayT";
             this.blankDisplayT.Size = new System.Drawing.Size(155, 19);
             this.blankDisplayT.TabIndex = 24;
@@ -244,7 +248,7 @@
             // 
             this.blankDisplayTh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.blankDisplayTh.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blankDisplayTh.Location = new System.Drawing.Point(142, 301);
+            this.blankDisplayTh.Location = new System.Drawing.Point(143, 324);
             this.blankDisplayTh.Name = "blankDisplayTh";
             this.blankDisplayTh.Size = new System.Drawing.Size(156, 19);
             this.blankDisplayTh.TabIndex = 25;
@@ -254,11 +258,29 @@
             // 
             this.blankDisplayF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.blankDisplayF.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blankDisplayF.Location = new System.Drawing.Point(229, 457);
+            this.blankDisplayF.Location = new System.Drawing.Point(229, 482);
             this.blankDisplayF.Name = "blankDisplayF";
             this.blankDisplayF.Size = new System.Drawing.Size(69, 19);
             this.blankDisplayF.TabIndex = 26;
             this.blankDisplayF.Text = " ";
+            // 
+            // textboxSix
+            // 
+            this.textboxSix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.textboxSix.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxSix.Location = new System.Drawing.Point(107, 12);
+            this.textboxSix.Name = "textboxSix";
+            this.textboxSix.Size = new System.Drawing.Size(187, 35);
+            this.textboxSix.TabIndex = 27;
+            // 
+            // displayNine
+            // 
+            this.displayNine.Font = new System.Drawing.Font("Tekton Pro Ext", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayNine.Location = new System.Drawing.Point(31, 14);
+            this.displayNine.Name = "displayNine";
+            this.displayNine.Size = new System.Drawing.Size(70, 22);
+            this.displayNine.TabIndex = 28;
+            this.displayNine.Text = "Name";
             // 
             // mainDisplay
             // 
@@ -266,6 +288,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
             this.ClientSize = new System.Drawing.Size(690, 575);
+            this.Controls.Add(this.displayNine);
+            this.Controls.Add(this.textboxSix);
             this.Controls.Add(this.blankDisplayF);
             this.Controls.Add(this.blankDisplayTh);
             this.Controls.Add(this.blankDisplayT);
@@ -288,6 +312,7 @@
             this.Controls.Add(this.displayT);
             this.Controls.Add(this.displayTh);
             this.Controls.Add(this.displayO);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainDisplay";
             this.Text = "Great Burger";
             this.ResumeLayout(false);
@@ -319,6 +344,8 @@
         private System.Windows.Forms.Label blankDisplayT;
         private System.Windows.Forms.Label blankDisplayTh;
         private System.Windows.Forms.Label blankDisplayF;
+        private System.Windows.Forms.MaskedTextBox textboxSix;
+        private System.Windows.Forms.Label displayNine;
     }
 }
 

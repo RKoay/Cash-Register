@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 
 namespace Cash_Register
@@ -38,11 +39,52 @@ namespace Cash_Register
         double totalFriesCost = 0;
         double totalDrinksCost = 0;
 
+        string name;
+
+        Graphics receiptDisplay;
+
         private void clickO_Click(object sender, EventArgs e)
         {
-            burgerAmount = Convert.ToInt16(textboxO.Text);
-            friesAmount = Convert.ToInt16(textboxT.Text);
-            drinksAmount = Convert.ToInt16(textboxTh.Text);
+            try 
+            {
+                burgerAmount = Convert.ToInt16(textboxO.Text);
+            }
+            catch 
+            {
+                textboxO.Text = "";
+                return;
+             }
+
+            try
+            {
+                friesAmount = Convert.ToInt16(textboxT.Text);
+            }
+            catch 
+            {
+                textboxT.Text = "";
+                return;
+            }
+
+            try
+            {
+                drinksAmount = Convert.ToInt16(textboxTh.Text);
+            }
+            catch
+            {
+                textboxTh.Text = "";
+                return;
+            }
+
+            try
+            {
+                name = textboxSix.Text;
+            }
+            catch
+            {
+                textboxSix.Text = "";
+                return;
+            }
+            
             totalBurgerCost = burgerAmount * BURGERCOST;
             totalBurgerCost.ToString("C");
             totalFriesCost = friesAmount * FRIESCOST;
@@ -62,8 +104,15 @@ namespace Cash_Register
 
         private void clickT_Click(object sender, EventArgs e)
         {
-            givenAmount = Convert.ToInt16(textboxSe.Text);
-            givenAmount.ToString("0.00");
+            try
+            {
+                givenAmount = Convert.ToInt16(textboxSe.Text);
+            }
+            catch
+            {
+                textboxSe.Text = "";
+                return;
+            }
             change = givenAmount - grandTotal;
             change.ToString("C");
             blankDisplayF.Text = change.ToString("C");
@@ -72,7 +121,7 @@ namespace Cash_Register
 
         private void clickTh_Click(object sender, EventArgs e)
         {
-
+            
             string lineOne = "Great Burger Company";
             string lineTwo = "Hamburger";
             string lineThree = "Fries";
@@ -85,9 +134,13 @@ namespace Cash_Register
             string lineTen = "@";
             string lineEleven = "each";
 
-            Graphics receiptDisplay = this.CreateGraphics();
+            receiptDisplay = this.CreateGraphics();
             Font font = new Font("consolas", 12, FontStyle.Underline);
             SolidBrush colour = new SolidBrush(Color.Black);
+
+            SoundPlayer player = new SoundPlayer(Properties.Resources.Dot_Matrix_Printer_SoundBible_com_790333844__1_);
+            player.Play();
+
             receiptDisplay.DrawString(lineOne, font, colour, 370, 20);
             Thread.Sleep(500);
             font = new Font("consolas", 12);
@@ -100,21 +153,46 @@ namespace Cash_Register
             receiptDisplay.DrawString(lineFour + " x" + drinksAmount + lineTen + " $" + DRINKSCOST + lineEleven, font, colour, 350, 80);
             receiptDisplay.DrawString("$" + totalDrinksCost, font, colour, 600, 80);
             Thread.Sleep(500);
+
+            player = new SoundPlayer(Properties.Resources.Dot_Matrix_Printer_SoundBible_com_790333844__1_);
+            player.Play();
             receiptDisplay.DrawString(lineFive, font, colour, 350, 100);
             receiptDisplay.DrawString("$" + subTotal, font, colour, 600, 100);
             Thread.Sleep(500);
             receiptDisplay.DrawString(lineSix, font, colour, 350, 120);
-            receiptDisplay.DrawString("$" + taxes, font, colour, 600, 120);
+            receiptDisplay.DrawString("$" + taxes.ToString("0.00"), font, colour, 600, 120);
             Thread.Sleep(500);
             receiptDisplay.DrawString(lineSeven, font, colour, 350, 180);
-            receiptDisplay.DrawString("$" + grandTotal, font, colour, 600, 180);
+            receiptDisplay.DrawString("$" + grandTotal.ToString("0.00"), font, colour, 600, 180);
             Thread.Sleep(500);
+
+            player = new SoundPlayer(Properties.Resources.Dot_Matrix_Printer_SoundBible_com_790333844__1_);
+            player.Play();
             receiptDisplay.DrawString(lineEight, font, colour, 350, 200);
             receiptDisplay.DrawString("$" + givenAmount, font, colour, 600, 200);
             Thread.Sleep(500);
             receiptDisplay.DrawString(lineNine, font, colour, 350, 240);
-            receiptDisplay.DrawString("$" + change, font, colour, 600, 240);
+            receiptDisplay.DrawString("$" + change.ToString("0.00"), font, colour, 600, 240);
+            Thread.Sleep(500);
+            receiptDisplay.DrawString("Thank You For Stopping By, " + name, font, colour, 350, 280);
 
+
+        }
+
+        private void clickF_Click(object sender, EventArgs e)
+        {
+            receiptDisplay.Clear(Color.SandyBrown);
+
+            textboxO.Text = "";
+            textboxT.Text = "";
+            textboxTh.Text = "";
+            textboxSix.Text = "";
+            textboxSe.Text = "";
+            blankDisplayO.Text = "";
+            blankDisplayT.Text = "";
+            blankDisplayTh.Text = "";
+            blankDisplayF.Text = "";
+            
 
         }
     }
