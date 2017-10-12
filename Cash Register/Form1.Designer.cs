@@ -183,6 +183,7 @@
             // decorationT
             // 
             this.decorationT.BackColor = System.Drawing.Color.Black;
+            this.decorationT.Cursor = System.Windows.Forms.Cursors.Default;
             this.decorationT.Font = new System.Drawing.Font("Adobe Caslon Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.decorationT.Location = new System.Drawing.Point(304, 0);
             this.decorationT.Name = "decorationT";
@@ -287,6 +288,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(690, 575);
             this.Controls.Add(this.displayNine);
             this.Controls.Add(this.textboxSix);
@@ -312,6 +314,7 @@
             this.Controls.Add(this.displayT);
             this.Controls.Add(this.displayTh);
             this.Controls.Add(this.displayO);
+            this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainDisplay";
             this.Text = "Great Burger";

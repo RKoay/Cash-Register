@@ -82,5 +82,14 @@
   <ItemGroup>
     <None Include="Resources\Dot Matrix Printer-SoundBible.com-790333844 %281%29.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veggie burger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\striped background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger and fries.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

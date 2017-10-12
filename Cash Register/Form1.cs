@@ -21,11 +21,14 @@ namespace Cash_Register
         }
 
         //global variables
+
+        //Variables that won't change
         const double BURGERCOST = 2.49;
         const double FRIESCOST = 1.89;
         const double DRINKSCOST = 0.99;
         const double TAXRATIO = 0.13;
 
+        //Variables that will change
         int burgerAmount = 0;
         int friesAmount = 0;
         int drinksAmount = 0;
@@ -45,7 +48,8 @@ namespace Cash_Register
 
         private void clickO_Click(object sender, EventArgs e)
         {
-            try 
+            //Applying try and catch so that the program will not crash when errors occur
+            try
             {
                 burgerAmount = Convert.ToInt16(textboxO.Text);
             }
@@ -84,44 +88,45 @@ namespace Cash_Register
                 textboxSix.Text = "";
                 return;
             }
-            
+            //Calculation 
             totalBurgerCost = burgerAmount * BURGERCOST;
-            totalBurgerCost.ToString("C");
+            totalBurgerCost.ToString("C");//Formatting Number
             totalFriesCost = friesAmount * FRIESCOST;
-            totalFriesCost.ToString("C");
+            totalFriesCost.ToString("C");//Formatting Number
             totalDrinksCost = drinksAmount * DRINKSCOST;
-            totalDrinksCost.ToString("C");
+            totalDrinksCost.ToString("C");//Formatting Number
+            //How much the total actually is without the tax annd such
             subTotal = totalBurgerCost + totalFriesCost + totalDrinksCost;
-            blankDisplayO.Text = subTotal.ToString("C");
+            blankDisplayO.Text = subTotal.ToString("C");//Formatting Number
 
             taxes = TAXRATIO * subTotal;
-            blankDisplayT.Text = taxes.ToString("C");
+            blankDisplayT.Text = taxes.ToString("C");//Formatting Number
 
             grandTotal = taxes + subTotal;
-            grandTotal.ToString("C");
-            blankDisplayTh.Text = grandTotal.ToString("C");
+            blankDisplayTh.Text = grandTotal.ToString("C");//Formatting Number
         }
 
         private void clickT_Click(object sender, EventArgs e)
         {
+            //Applying try and catch so that the program will not crash when errors occur
             try
             {
-                givenAmount = Convert.ToInt16(textboxSe.Text);
+                givenAmount = Convert.ToDouble(textboxSe.Text);
             }
             catch
             {
                 textboxSe.Text = "";
-                return;
             }
+            //Calculation
             change = givenAmount - grandTotal;
-            change.ToString("C");
+            //Formatting Numbers
             blankDisplayF.Text = change.ToString("C");
 
         }
 
         private void clickTh_Click(object sender, EventArgs e)
         {
-            
+            //Giving names
             string lineOne = "Great Burger Company";
             string lineTwo = "Hamburger";
             string lineThree = "Fries";
@@ -134,10 +139,12 @@ namespace Cash_Register
             string lineTen = "@";
             string lineEleven = "each";
 
+            //Using drawstrings to create the receipt
             receiptDisplay = this.CreateGraphics();
             Font font = new Font("consolas", 12, FontStyle.Underline);
             SolidBrush colour = new SolidBrush(Color.Black);
 
+            //Playing the sound
             SoundPlayer player = new SoundPlayer(Properties.Resources.Dot_Matrix_Printer_SoundBible_com_790333844__1_);
             player.Play();
 
@@ -147,10 +154,10 @@ namespace Cash_Register
             receiptDisplay.DrawString(lineTwo + " x" + burgerAmount + lineTen + " $" + BURGERCOST + lineEleven, font, colour, 350, 40);
             receiptDisplay.DrawString("$" + totalBurgerCost, font, colour, 600, 40);
             Thread.Sleep(500);
-            receiptDisplay.DrawString(lineThree + " x" + friesAmount + lineTen + " $" + FRIESCOST + lineEleven, font, colour, 350, 60);
+            receiptDisplay.DrawString(lineThree + "     x" + friesAmount + lineTen + " $" + FRIESCOST + lineEleven, font, colour, 350, 60);
             receiptDisplay.DrawString("$" + totalFriesCost, font, colour, 600, 60);
             Thread.Sleep(500);
-            receiptDisplay.DrawString(lineFour + " x" + drinksAmount + lineTen + " $" + DRINKSCOST + lineEleven, font, colour, 350, 80);
+            receiptDisplay.DrawString(lineFour + "    x" + drinksAmount + lineTen + " $" + DRINKSCOST + lineEleven, font, colour, 350, 80);
             receiptDisplay.DrawString("$" + totalDrinksCost, font, colour, 600, 80);
             Thread.Sleep(500);
 
@@ -159,7 +166,7 @@ namespace Cash_Register
             receiptDisplay.DrawString(lineFive, font, colour, 350, 100);
             receiptDisplay.DrawString("$" + subTotal, font, colour, 600, 100);
             Thread.Sleep(500);
-            receiptDisplay.DrawString(lineSix, font, colour, 350, 120);
+            receiptDisplay.DrawString(lineSix + "       " + lineTen + " " + "13%", font, colour, 350, 120);
             receiptDisplay.DrawString("$" + taxes.ToString("0.00"), font, colour, 600, 120);
             Thread.Sleep(500);
             receiptDisplay.DrawString(lineSeven, font, colour, 350, 180);
