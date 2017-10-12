@@ -78,16 +78,8 @@ namespace Cash_Register
                 textboxTh.Text = "";
                 return;
             }
-
-            try
-            {
                 name = textboxSix.Text;
-            }
-            catch
-            {
-                textboxSix.Text = "";
-                return;
-            }
+           
             //Calculation 
             totalBurgerCost = burgerAmount * BURGERCOST;
             totalBurgerCost.ToString("C");//Formatting Number
