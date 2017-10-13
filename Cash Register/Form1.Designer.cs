@@ -53,6 +53,9 @@
             this.blankDisplayF = new System.Windows.Forms.Label();
             this.textboxSix = new System.Windows.Forms.MaskedTextBox();
             this.displayNine = new System.Windows.Forms.Label();
+            this.displayTen = new System.Windows.Forms.Label();
+            this.displayEl = new System.Windows.Forms.Label();
+            this.displayTw = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // displayO
@@ -88,7 +91,7 @@
             this.textboxO.Location = new System.Drawing.Point(229, 70);
             this.textboxO.Name = "textboxO";
             this.textboxO.Size = new System.Drawing.Size(69, 35);
-            this.textboxO.TabIndex = 3;
+            this.textboxO.TabIndex = 2;
             // 
             // textboxTh
             // 
@@ -104,7 +107,7 @@
             this.textboxT.Location = new System.Drawing.Point(229, 113);
             this.textboxT.Name = "textboxT";
             this.textboxT.Size = new System.Drawing.Size(69, 35);
-            this.textboxT.TabIndex = 5;
+            this.textboxT.TabIndex = 3;
             // 
             // clickO
             // 
@@ -113,7 +116,7 @@
             this.clickO.Location = new System.Drawing.Point(57, 199);
             this.clickO.Name = "clickO";
             this.clickO.Size = new System.Drawing.Size(223, 46);
-            this.clickO.TabIndex = 6;
+            this.clickO.TabIndex = 5;
             this.clickO.Text = "Calculate Total";
             this.clickO.UseVisualStyleBackColor = false;
             this.clickO.Click += new System.EventHandler(this.clickO_Click);
@@ -178,7 +181,7 @@
             this.textboxSe.Location = new System.Drawing.Point(229, 372);
             this.textboxSe.Name = "textboxSe";
             this.textboxSe.Size = new System.Drawing.Size(69, 35);
-            this.textboxSe.TabIndex = 16;
+            this.textboxSe.TabIndex = 6;
             // 
             // decorationT
             // 
@@ -197,7 +200,7 @@
             this.clickT.Location = new System.Drawing.Point(57, 420);
             this.clickT.Name = "clickT";
             this.clickT.Size = new System.Drawing.Size(223, 46);
-            this.clickT.TabIndex = 19;
+            this.clickT.TabIndex = 7;
             this.clickT.Text = "Calculate Change";
             this.clickT.UseVisualStyleBackColor = false;
             this.clickT.Click += new System.EventHandler(this.clickT_Click);
@@ -209,7 +212,7 @@
             this.clickTh.Location = new System.Drawing.Point(57, 517);
             this.clickTh.Name = "clickTh";
             this.clickTh.Size = new System.Drawing.Size(223, 46);
-            this.clickTh.TabIndex = 20;
+            this.clickTh.TabIndex = 8;
             this.clickTh.Text = "Print Receipt";
             this.clickTh.UseVisualStyleBackColor = false;
             this.clickTh.Click += new System.EventHandler(this.clickTh_Click);
@@ -217,10 +220,10 @@
             // clickF
             // 
             this.clickF.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clickF.Location = new System.Drawing.Point(371, 499);
+            this.clickF.Location = new System.Drawing.Point(365, 341);
             this.clickF.Name = "clickF";
-            this.clickF.Size = new System.Drawing.Size(279, 64);
-            this.clickF.TabIndex = 22;
+            this.clickF.Size = new System.Drawing.Size(296, 57);
+            this.clickF.TabIndex = 9;
             this.clickF.Text = "New Order";
             this.clickF.UseVisualStyleBackColor = true;
             this.clickF.Click += new System.EventHandler(this.clickF_Click);
@@ -272,7 +275,7 @@
             this.textboxSix.Location = new System.Drawing.Point(107, 12);
             this.textboxSix.Name = "textboxSix";
             this.textboxSix.Size = new System.Drawing.Size(187, 35);
-            this.textboxSix.TabIndex = 27;
+            this.textboxSix.TabIndex = 1;
             // 
             // displayNine
             // 
@@ -283,6 +286,33 @@
             this.displayNine.TabIndex = 28;
             this.displayNine.Text = "Name";
             // 
+            // displayTen
+            // 
+            this.displayTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.displayTen.Location = new System.Drawing.Point(330, 401);
+            this.displayTen.Name = "displayTen";
+            this.displayTen.Size = new System.Drawing.Size(359, 165);
+            this.displayTen.TabIndex = 29;
+            this.displayTen.Click += new System.EventHandler(this.displayTen_Click);
+            // 
+            // displayEl
+            // 
+            this.displayEl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.displayEl.Location = new System.Drawing.Point(344, 420);
+            this.displayEl.Name = "displayEl";
+            this.displayEl.Size = new System.Drawing.Size(334, 120);
+            this.displayEl.TabIndex = 30;
+            this.displayEl.Click += new System.EventHandler(this.displayEl_Click);
+            // 
+            // displayTw
+            // 
+            this.displayTw.BackColor = System.Drawing.Color.Snow;
+            this.displayTw.Location = new System.Drawing.Point(451, 449);
+            this.displayTw.Name = "displayTw";
+            this.displayTw.Size = new System.Drawing.Size(116, 70);
+            this.displayTw.TabIndex = 31;
+            this.displayTw.Click += new System.EventHandler(this.displayTw_Click);
+            // 
             // mainDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +320,9 @@
             this.BackColor = System.Drawing.Color.SandyBrown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(690, 575);
+            this.Controls.Add(this.displayTw);
+            this.Controls.Add(this.displayEl);
+            this.Controls.Add(this.displayTen);
             this.Controls.Add(this.displayNine);
             this.Controls.Add(this.textboxSix);
             this.Controls.Add(this.blankDisplayF);
@@ -349,6 +382,9 @@
         private System.Windows.Forms.Label blankDisplayF;
         private System.Windows.Forms.MaskedTextBox textboxSix;
         private System.Windows.Forms.Label displayNine;
+        private System.Windows.Forms.Label displayTen;
+        private System.Windows.Forms.Label displayEl;
+        private System.Windows.Forms.Label displayTw;
     }
 }
 

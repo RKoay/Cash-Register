@@ -56,7 +56,6 @@ namespace Cash_Register
             catch 
             {
                 textboxO.Text = "";
-                return;
              }
 
             try
@@ -66,7 +65,6 @@ namespace Cash_Register
             catch 
             {
                 textboxT.Text = "";
-                return;
             }
 
             try
@@ -108,6 +106,7 @@ namespace Cash_Register
             catch
             {
                 textboxSe.Text = "";
+                return;
             }
             //Calculation
             change = givenAmount - grandTotal;
@@ -118,6 +117,13 @@ namespace Cash_Register
 
         private void clickTh_Click(object sender, EventArgs e)
         {
+            Pen drawPen = new Pen(Color.Black, 5);
+            SolidBrush colour = new SolidBrush(Color.White);
+            receiptDisplay = this.CreateGraphics();
+            receiptDisplay.DrawRectangle(drawPen, 320, 10, 620, 320);
+            receiptDisplay.FillRectangle(colour, 320, 10, 620, 320);
+
+
             //Giving names
             string lineOne = "Great Burger Company";
             string lineTwo = "Hamburger";
@@ -132,9 +138,8 @@ namespace Cash_Register
             string lineEleven = "each";
 
             //Using drawstrings to create the receipt
-            receiptDisplay = this.CreateGraphics();
             Font font = new Font("consolas", 12, FontStyle.Underline);
-            SolidBrush colour = new SolidBrush(Color.Black);
+            colour = new SolidBrush(Color.Black);
 
             //Playing the sound
             SoundPlayer player = new SoundPlayer(Properties.Resources.Dot_Matrix_Printer_SoundBible_com_790333844__1_);
@@ -192,6 +197,54 @@ namespace Cash_Register
             blankDisplayTh.Text = "";
             blankDisplayF.Text = "";
             
+
+        }
+
+        private void displayTw_Click(object sender, EventArgs e)
+        {
+            receiptDisplay.Clear(Color.SandyBrown);
+
+            textboxO.Text = "";
+            textboxT.Text = "";
+            textboxTh.Text = "";
+            textboxSix.Text = "";
+            textboxSe.Text = "";
+            blankDisplayO.Text = "";
+            blankDisplayT.Text = "";
+            blankDisplayTh.Text = "";
+            blankDisplayF.Text = "";
+
+        }
+
+        private void displayEl_Click(object sender, EventArgs e)
+        {
+            receiptDisplay.Clear(Color.SandyBrown);
+
+            textboxO.Text = "";
+            textboxT.Text = "";
+            textboxTh.Text = "";
+            textboxSix.Text = "";
+            textboxSe.Text = "";
+            blankDisplayO.Text = "";
+            blankDisplayT.Text = "";
+            blankDisplayTh.Text = "";
+            blankDisplayF.Text = "";
+
+        }
+
+        private void displayTen_Click(object sender, EventArgs e)
+        {
+            receiptDisplay.Clear(Color.SandyBrown);
+
+            textboxO.Text = "";
+            textboxT.Text = "";
+            textboxTh.Text = "";
+            textboxSix.Text = "";
+            textboxSe.Text = "";
+            blankDisplayO.Text = "";
+            blankDisplayT.Text = "";
+            blankDisplayTh.Text = "";
+            blankDisplayF.Text = "";
 
         }
     }
