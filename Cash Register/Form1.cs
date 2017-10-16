@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Cash Register created by Rie Koay on October 16 2017
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
